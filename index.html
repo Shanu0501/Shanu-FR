@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Friendship Forest</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="particles-canvas"></canvas>
+
+    <section id="landing-page" class="page-section active">
+        <div class="content-wrapper text-center">
+            <h1 class="hero-title">The Friendship Forest</h1>
+            <p class="subtitle">A highly classified archive of questionable decisions, bad jokes, random adventures, and the people responsible for them.</p>
+            <p class="body-text">If you're here, congratulations. You've officially become part of Shanu's lifetime collection of chaos.</p>
+            <button id="enter-btn" class="gold-btn">Enter At Your Own Risk</button>
+        </div>
+    </section>
+
+    <section id="selection-screen" class="page-section hidden">
+        <div class="tree-background"></div>
+        <div class="content-wrapper">
+            <h2 class="section-title text-center">The Forest Inhabitants</h2>
+            <div id="friend-grid" class="friend-grid">
+                </div>
+        </div>
+    </section>
+
+    <div id="password-modal" class="modal hidden">
+        <div class="modal-content">
+            <h3 class="serif-title">Enter Your Secret Code</h3>
+            <p id="modal-friend-name" class="accent-text"></p>
+            <input type="password" id="secret-code-input" placeholder="****" maxlength="4">
+            <p id="password-error" class="error-text hidden">Nice try. This memory vault is not for you.</p>
+            <div class="modal-actions">
+                <button id="cancel-login" class="ghost-btn">Cancel</button>
+                <button id="submit-login" class="gold-btn">Unlock</button>
+            </div>
+        </div>
+    </div>
+
+    <section id="friend-page" class="page-section hidden">
+        <div class="content-wrapper">
+            
+            <div class="friend-hero text-center">
+                <h1 id="fp-greeting" class="hero-title">Dear [Name]</h1>
+                <div class="typewriter-container">
+                    <p id="fp-message" class="body-text"></p>
+                </div>
+            </div>
+
+            <div class="counter-section text-center box-container">
+                <h3 class="serif-title accent-text">Friendship Timeline</h3>
+                <p>Known Since: <span id="fp-date"></span></p>
+                <div class="live-counter" id="live-counter">
+                    <div class="time-block"><span id="count-years">0</span> Years</div>
+                    <div class="time-block"><span id="count-months">0</span> Months</div>
+                    <div class="time-block"><span id="count-days">0</span> Days</div>
+                </div>
+            </div>
+
+            <div class="timeline-section">
+                <h3 class="section-title text-center">The Archives</h3>
+                <div class="timeline" id="fp-timeline">
+                    </div>
+            </div>
+
+            <div class="gallery-section">
+                <h3 class="section-title text-center">Photographic Evidence</h3>
+                <div class="polaroid-grid" id="fp-gallery">
+                    </div>
+            </div>
+
+            <div class="voice-section text-center box-container">
+                <h3 class="serif-title accent-text">A Message From Shanu</h3>
+                <audio controls class="custom-audio">
+                    <source src="placeholder_audio.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+
+            <div class="letter-section box-container">
+                <div class="envelope-wrapper" id="envelope">
+                    <div class="envelope-flap"></div>
+                    <div class="envelope-body">
+                        <div class="letter" id="fp-letter">
+                            Dear Future [Name]...
+                        </div>
+                    </div>
+                    <div class="envelope-front">Tap to open</div>
+                </div>
+            </div>
+
+            <div class="final-section text-center">
+                <h2 class="serif-title">Before You Leave</h2>
+                <p class="body-text">Thank you for being part of my story.</p>
+                <button id="whatsapp-btn" class="gold-btn">Send Shanu a Message</button>
+                <br><br>
+                <button id="return-btn" class="ghost-btn">Return To The Forest</button>
+            </div>
+        </div>
+    </section>
+
+    <div id="lightbox" class="modal hidden">
+        <span class="close-lightbox">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+        <div id="lightbox-caption" class="lightbox-caption"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
